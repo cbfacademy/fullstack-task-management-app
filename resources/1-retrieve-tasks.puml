@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title **Retrieve tasks **
+
+skinparam roundcorner 10
+skinparam ParticipantPadding 20
+skinparam BoxPadding 20
+
+boundary client
+
+box #F5ECD5
+participant TasksController as controller
+participant GetTasksQuery as query
+participant TasksRepository as repository
+
+client -> controller: GET /tasks
+activate controller
+
+controller -> query: allTasks()
+activate query
+
+query -> repository: getAll()
+activate repository
+repository -> repository: tasks
+
+note over repository: Task\n - id\n - title\n - description\n - completed\n\n + complete()\n + edit(title, description)\n
+repository --> query: tasks
+deactivate repository
+
+query --> controller: tasks
+deactivate query
+
+controller --> client: 200 OK [all tasks]
+deactivate controller
+
+end box
+@enduml

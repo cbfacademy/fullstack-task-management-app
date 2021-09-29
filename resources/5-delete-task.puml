@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title **Delete a task **
+
+skinparam roundcorner 10
+skinparam ParticipantPadding 20
+skinparam BoxPadding 20
+
+boundary client
+
+box #F5ECD5
+participant DeleteTaskController as controller
+participant DeleteTaskCommand as command
+participant TasksRepository as repository
+
+client -> controller: DELETE /tasks/{id}
+activate controller
+
+controller -> command: execute()
+activate command
+
+command -> repository: delete(id)
+activate repository
+
+deactivate repository
+deactivate command
+
+...some time (milliseconds) later...
+
+controller --> client: 204 NO CONTENT
+deactivate controller
+
+end box
+@enduml

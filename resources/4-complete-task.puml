@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title **Complete a task **
+
+skinparam roundcorner 10
+skinparam ParticipantPadding 20
+skinparam BoxPadding 20
+
+boundary client
+
+box #F5ECD5
+participant CompleteTaskController as controller
+participant CompleteTaskCommand as command
+participant Task as task
+participant TasksRepository as repository
+
+client -> controller: PUT /tasks/{id}
+activate controller
+
+controller -> command: execute()
+activate command
+
+command -> repository: getById(id)
+activate repository
+
+repository --> command: Task
+deactivate repository
+
+command -> task: complete()
+note over task: Task\n - id\n - title\n - description\n - completed\n\n + instance(title, description)\n + complete()\n + edit(title, description)\n
+activate task
+
+task --> command
+deactivate task
+
+command -> repository: save(task)
+activate repository
+
+deactivate repository
+deactivate command
+
+...some time (milliseconds) later...
+
+controller --> client: 204 NO CONTENT
+deactivate controller
+
+end box
+@enduml
