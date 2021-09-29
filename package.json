@@ -1,0 +1,25 @@
+{
+  "name": "task-management-app",
+  "version": "1.0.0",
+  "description": "A simple web API to manage tasks",
+  "main": "index.js",
+  "repository": "git@github.com:CodingBlackFemales/task-management-app.git",
+  "author": "Solange Umuhire Gasengayire <sgasengayire@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon ./src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-jest": "^27.2.4",
+    "jest": "^27.2.4",
+    "nodemon": "^2.0.13"
+  }
+}
