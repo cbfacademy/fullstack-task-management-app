@@ -15,6 +15,7 @@ We want to ensure that the emphasis is on practicing all the test-driven develop
 - [Edit a task][7]
 - [Complete a task][8]
 - [Delete a task][9]
+- [Getting started][10]
 
 
 ## Retrieve tasks
@@ -133,3 +134,4 @@ Then I should get a `204 NO CONTENT` response. <br/>
 [7]: #edit-a-task
 [8]: #complete-a-task
 [9]: #delete-a-task
+[10]: GETTING-STARTED.md
