@@ -25,6 +25,49 @@ Generally speaking, each functionality will be implemented via four types of com
 4. [Complete a task][5]
 5. [Delete a task][6]
 
+## Project Structure
+
+We've provided a basic scaffolding for the project to allow you to focus on the core functionality. We've separated "production" code from the tests as follows... However, feel free to restructure the codebase as you see fit.
+
+
+![Project structure][8]
+
+### Starting the server
+
+We're using Node.js and [express][7] as a web framework to expose our API. Before starting your implementation, check that the provided setup works. 
+
+First install all the dependencies in the project by running:
+
+```bash
+yarn install
+```
+
+Then, to start the server, run the following command:
+
+```bash
+yarn dev
+```
+
+You should be able to see a similar output to this:
+
+```bash
+$ nodemon ./src/index.js
+[nodemon] 2.0.13
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node ./src/index.js`
+task management app started on port 4000
+```
+
+A `GET` request to `localhost:4000/` (via postman for example) should return:
+
+```JSON
+200 OK
+{
+  "name": "task management application"
+}
+```
 
 
 [1]: https://martinfowler.com/bliki/CQRS.html
@@ -33,4 +76,6 @@ Generally speaking, each functionality will be implemented via four types of com
 [4]: requirements/3-edit-task.md
 [5]: requirements/4-complete-task.md
 [6]: requirements/5-delete-task.md
+[7]: https://expressjs.com/
+[8]: /resources/structure.png
 
