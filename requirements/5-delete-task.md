@@ -1,6 +1,6 @@
 # Delete a task
 
-Implete the three components shown in the sequence diagram, in such a way that:
+Implement the three components shown in the sequence diagram, in such a way that:
 - an existing task is deleted
 - a subsequent request to retrieve tasks returns a non-empty list of tasks, without the deleted task.
 

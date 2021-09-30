@@ -1,6 +1,6 @@
 # Retrieve tasks
 
-Implete the four components shown in the sequence diagram, in such a way that the **first** request to retrieve tasks returns a non-empty list of tasks.
+Implement the four components shown in the sequence diagram, in such a way that the **first** request to retrieve tasks returns a non-empty list of tasks.
 
 > Given there are 2 tasks in our task management system <br/>
 > When I request to see their details via the `GET /tasks` endpoint <br/>

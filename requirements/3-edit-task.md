@@ -1,6 +1,6 @@
 # Edit a task
 
-Implete the four components shown in the sequence diagram, in such a way that:
+Implement the four components shown in the sequence diagram, in such a way that:
 - an existing task is edited
 - a subsequent request to retrieve tasks returns a non-empty list of tasks, with the newly edited task.
 
