@@ -8,9 +8,11 @@ export interface TasksRepository {
 
 export class InMemoryTasksRepository implements TasksRepository {
   tasks: Task [];
+  startIndex: number;
 
   constructor() {
     this.tasks = INITIAL_TASKS;
+    this.startIndex = 3;
   }
 
   getAll(): Task[] {
@@ -21,8 +23,10 @@ export class InMemoryTasksRepository implements TasksRepository {
     throw new Error("Not implemented");
   }
 
-  save(task): void {
-    throw new Error("Not implemented");
+  save(task: Task): void {
+    task.id = this.startIndex;
+    this.startIndex = this.startIndex + 1;
+    this.tasks.push(task);
   }
 }
 

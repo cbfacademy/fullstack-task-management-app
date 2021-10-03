@@ -1,5 +1,5 @@
 import { Task } from "../domain/Task";
-const { TasksRepository } = require("../repositories/TasksRepository");
+import { TasksRepository } from "../repositories/TasksRepository";
 
 export interface GetTasksQuery {
   getTasks(): Task[];

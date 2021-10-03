@@ -1,9 +1,10 @@
 import type { TasksRepository } from "../../src/repositories/TasksRepository";
 import { Task } from "../../src/domain/Task";
-import {getAllTestTasks} from "./tasksFixture";
+import { getAllTestTasks } from "./tasksFixture";
 
 export class TasksRepositoryFake implements TasksRepository {
   tasks: Task[] = getAllTestTasks();
+  numberOfCalls: number = 0;
 
   getAll(): Task[] {
     return this.tasks;
@@ -14,7 +15,11 @@ export class TasksRepositoryFake implements TasksRepository {
   }
 
   save(task: Task): void {
+    this.numberOfCalls++;
     this.tasks.push(task);
   }
 
+  wasCalled(): number {
+    return this.numberOfCalls;
+  }
 }

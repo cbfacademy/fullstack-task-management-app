@@ -1,15 +1,19 @@
 import { TasksRepository } from "../repositories/TasksRepository";
+import { Task } from "../domain/Task";
 
 export interface CreateTaskCommand {
   execute(title: string, description: string): void;
 }
 
 export class SimpleCreateTaskCommand implements CreateTaskCommand {
+  repository: TasksRepository;
+
   constructor(repository: TasksRepository) {
-    throw new Error("Not implemented");
+    this.repository = repository;
   }
 
   execute(title, description): void {
-    throw new Error("Not implemented");
+    const newTask = new Task(title, description);
+    this.repository.save(newTask);
   }
 }

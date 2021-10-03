@@ -1,5 +1,5 @@
 import { Task } from "../domain/Task";
-const { GetTasksQuery } = require("../queries/GetTasksQuery");
+import { GetTasksQuery } from "../queries/GetTasksQuery";
 
 export class TasksController {
   getTasksQuery: GetTasksQuery;

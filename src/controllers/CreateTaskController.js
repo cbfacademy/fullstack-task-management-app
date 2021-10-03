@@ -1,11 +1,14 @@
+import type { CreateTaskRequest } from "./CreateTaskRequest";
 import { CreateTaskCommand } from "../commands/CreateTaskCommand";
 
 export class CreateTaskController {
+  command: CreateTaskCommand;
+
   constructor(command: CreateTaskCommand) {
-    throw new Error("Not implemented");
+    this.command = command;
   }
 
-  create(request: Request): void {
-    throw new Error("Not implemented");
+  create(request: CreateTaskRequest): void {
+    this.command.execute(request.title, request.description);
   }
 }

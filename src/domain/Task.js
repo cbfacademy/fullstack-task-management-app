@@ -5,6 +5,8 @@ export class Task {
   completed: false;
 
   constructor(title: string, description: string) {
-    throw new Error("Not implemented");
+    this.title = title;
+    this.description = description;
+    this.completed = false;
   }
 }
