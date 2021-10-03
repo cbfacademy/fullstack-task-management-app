@@ -1,5 +1,5 @@
-import {TasksRepositoryFake} from "../../fixture/TasksRepositoryFake";
-import {SimpleCreateTaskCommand} from "../../../src/commands/CreateTaskCommand";
+import { TasksRepositoryFake } from "../../fixture/TasksRepositoryFake";
+import { SimpleCreateTaskCommand } from "../../../src/commands/CreateTaskCommand";
 
 describe("The create task command should", () => {
   const repository = new TasksRepositoryFake();

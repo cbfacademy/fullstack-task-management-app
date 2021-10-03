@@ -7,7 +7,7 @@ export interface TasksRepository {
 }
 
 export class InMemoryTasksRepository implements TasksRepository {
-  tasks: Task [];
+  tasks: Map<number, Task>;
   startIndex: number;
 
   constructor() {
@@ -16,31 +16,46 @@ export class InMemoryTasksRepository implements TasksRepository {
   }
 
   getAll(): Task[] {
-    return this.tasks;
+    return Array.from(this.tasks.values());
   }
 
   getBy(id: number): Task {
-    throw new Error("Not implemented");
+    return this.tasks.get(id);
   }
 
   save(task: Task): void {
-    task.id = this.startIndex;
-    this.startIndex = this.startIndex + 1;
-    this.tasks.push(task);
+    if (! task.id) {
+      task.id = this.startIndex;
+      this.startIndex = this.startIndex + 1;
+    }
+    if (this.tasks.has(task.id)) {
+      this.tasks.delete(task.id);
+    }
+    this.tasks.set(task.id, task);
+  }
+
+  count(): number {
+    return this.tasks.size;
   }
 }
 
-const INITIAL_TASKS: Task[] = [
-  {
-    id: 1,
-    title: "Contact checkout",
-    description: "Inform the checkout team about the new version of our API.",
-    completed: false
-  },
-  {
-    id: 2,
-    title: "Contract phase",
-    description: "Prepare the contract phase of the old API.",
-    completed: false
-  }
-];
+const INITIAL_TASKS: Map<number, Task> = new Map([
+  [
+    1,
+    {
+      id: 1,
+      title: "Contact checkout",
+      description: "Inform the checkout team about the new version of our API.",
+      completed: false
+    }
+  ],
+  [
+    2,
+    {
+      id: 2,
+      title: "Contract phase",
+      description: "Prepare the contract phase of the old API.",
+      completed: false
+    }
+  ]
+]);

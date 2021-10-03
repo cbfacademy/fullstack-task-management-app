@@ -1,11 +1,14 @@
 import { UpdateTaskCommand } from "../commands/UpdateTaskCommand";
+import type { UpdateTaskRequest } from "./requests/UpdateTaskRequest";
 
 export class UpdateTaskController {
+  command: UpdateTaskCommand;
+
   constructor(command: UpdateTaskCommand) {
-    throw new Error("Not implemented");
+    this.command = command;
   }
 
-  update(request: Request): void {
-    throw new Error("Not implemented");
+  update(request: UpdateTaskRequest): void {
+    this.command.execute(request.id, request.title, request.description, request.completed);
   }
 }

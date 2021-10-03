@@ -35,7 +35,8 @@ router.put('/tasks/:id', async (req,res) => {
   const command = new SimpleUpdateTaskCommand(tasksRepository);
   const controller = new UpdateTaskController(command);
 
-  controller.update(req);
+  const updateRequest = { id: Number(req.params.id), ...req.body };
+  controller.update(updateRequest);
   return res.sendStatus(204);
 });
 

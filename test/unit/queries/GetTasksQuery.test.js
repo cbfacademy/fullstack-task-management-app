@@ -1,6 +1,6 @@
-import {getAllTestTasks} from "../../fixture/tasksFixture";
-import {SimpleGetTasksQuery} from "../../../src/queries/GetTasksQuery";
-import {TasksRepositoryFake} from "../../fixture/TasksRepositoryFake";
+import { getAllTestTasks } from "../../fixture/tasksFixture";
+import { SimpleGetTasksQuery } from "../../../src/queries/GetTasksQuery";
+import { TasksRepositoryFake } from "../../fixture/TasksRepositoryFake";
 
 describe("Get tasks query should", () => {
   const repository = new TasksRepositoryFake();

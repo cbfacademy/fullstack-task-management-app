@@ -10,12 +10,14 @@ export class TasksRepositoryFake implements TasksRepository {
     return this.tasks;
   }
 
-  getBy(id: number) {
+  getBy(id: number): Task {
+    this.numberOfCalls++;
     return this.tasks.find(task => task.id === id);
   }
 
   save(task: Task): void {
     this.numberOfCalls++;
+    if (task.id || task.id === 0) this.tasks = this.tasks.filter(task => task.id === task.id)
     this.tasks.push(task);
   }
 

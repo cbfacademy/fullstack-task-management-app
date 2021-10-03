@@ -5,11 +5,17 @@ export interface UpdateTaskCommand {
 }
 
 export class SimpleUpdateTaskCommand implements UpdateTaskCommand {
+  repository: TasksRepository;
+
   constructor(repository: TasksRepository) {
-    throw new Error("Not implemented");
+    this.repository = repository;
   }
 
   execute(id: number, title?: string, description?: string, completed?: false): void {
-    throw new Error("Not implemented");
+    const task = this.repository.getBy(id);
+    task.title = title ? title : task.title;
+    task.description = description ? description : task.description;
+    task.completed = completed ? completed : task.completed;
+    this.repository.save(task);
   }
 }

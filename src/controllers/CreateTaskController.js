@@ -1,4 +1,4 @@
-import type { CreateTaskRequest } from "./CreateTaskRequest";
+import type { CreateTaskRequest } from "./requests/CreateTaskRequest";
 import { CreateTaskCommand } from "../commands/CreateTaskCommand";
 
 export class CreateTaskController {

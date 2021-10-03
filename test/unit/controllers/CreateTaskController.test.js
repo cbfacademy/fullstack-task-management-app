@@ -1,5 +1,5 @@
-import {CreateTaskController} from "../../../src/controllers/CreateTaskController";
-import {CreateTaskCommandSpy} from "../../fixture/CreateTaskCommandSpy";
+import { CreateTaskController } from "../../../src/controllers/CreateTaskController";
+import { CreateTaskCommandSpy } from "../../fixture/CreateTaskCommandSpy";
 
 describe("The create task controller should", () => {
   const command = new CreateTaskCommandSpy();
