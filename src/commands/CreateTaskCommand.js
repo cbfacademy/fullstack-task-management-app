@@ -1,7 +1,15 @@
 import { TasksRepository } from "../repositories/TasksRepository";
 
-export class CreateTaskCommand {
+export interface CreateTaskCommand {
+  execute(title: string, description: string): void;
+}
+
+export class SimpleCreateTaskCommand implements CreateTaskCommand {
   constructor(repository: TasksRepository) {
-    //TODO
+    throw new Error("Not implemented");
+  }
+
+  execute(title, description): void {
+    throw new Error("Not implemented");
   }
 }

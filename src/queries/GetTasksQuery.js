@@ -1,9 +1,16 @@
+import { Task } from "../domain/Task";
 const { TasksRepository } = require("../repositories/TasksRepository");
 
-export class GetTasksQuery {
+export interface GetTasksQuery {
+  getTasks(): Task[];
+}
+
+export class SimpleGetTasksQuery implements GetTasksQuery {
   constructor(repository: TasksRepository) {
-    //TODO
+    throw new Error("Not implemented");
   }
 
-  //TODO
+  getTasks(): Task[] {
+    throw new Error("Not implemented");
+  }
 }

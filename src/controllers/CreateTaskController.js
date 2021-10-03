@@ -2,10 +2,10 @@ import { CreateTaskCommand } from "../commands/CreateTaskCommand";
 
 export class CreateTaskController {
   constructor(command: CreateTaskCommand) {
-    //TODO
+    throw new Error("Not implemented");
   }
 
-  create(request) {
-    //TODO
+  create(request: Request): void {
+    throw new Error("Not implemented");
   }
 }

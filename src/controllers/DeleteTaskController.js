@@ -2,10 +2,10 @@ import { DeleteTaskCommand } from "../commands/DeleteTaskCommand";
 
 export class DeleteTaskController {
   constructor(command: DeleteTaskCommand) {
-    //TODO
+    throw new Error("Not implemented");
   }
 
-  delete(request) {
-    //TODO
+  delete(request: Request): void {
+    throw new Error("Not implemented");
   }
 }
