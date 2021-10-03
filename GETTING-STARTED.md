@@ -60,7 +60,7 @@ $ nodemon ./src/index.js
 task management app started on port 4000
 ```
 
-A `GET` request to `localhost:4000/` (via postman for example) should return:
+A `GET` request to `localhost:4000/` (via [Postman][9] for example) should return:
 
 ```JSON
 200 OK
@@ -68,6 +68,17 @@ A `GET` request to `localhost:4000/` (via postman for example) should return:
   "name": "task management application"
 }
 ```
+
+### Access the `/tasks` API
+
+Once the server is started locally, you should be able to access the `/tasks` web API on `http://localhost:4000/tasks`.
+
+You can use a client like [Postman][10] to interact with the API, and:
+- retrieve all tasks via a `GET /tasks` request
+- create a task via a `POST /tasks` request
+- edit a task via a `PUT /tasks/{id}` request
+- complete a task via a `PUT /tasks/{id}` request
+- delete a task via a `DELETE /tasks/{id}` request
 
 
 [1]: https://martinfowler.com/bliki/CQRS.html
@@ -78,4 +89,6 @@ A `GET` request to `localhost:4000/` (via postman for example) should return:
 [6]: requirements/5-delete-task.md
 [7]: https://expressjs.com/
 [8]: /resources/structure.png
+[9]: https://www.postman.com/downloads/
+[10]: https://learning.postman.com/docs/getting-started/introduction/
 
