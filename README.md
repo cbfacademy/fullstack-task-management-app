@@ -9,7 +9,7 @@
 
 The purpose of this project is to build a simple web (JSON over HTTP) API to manage tasks, following a **test-driven development** approach. 
 
-We want to ensure that the emphasis is on practicing all the test-driven development concepts covered by the course. Therefore, in building this simple API, we will focus on happy path scenarios only.
+We want to ensure that the emphasis is on practicing all the test-driven development concepts covered by the course. Therefore, in building this simple API, we will focus on **happy path scenarios** only.
 
 - [Retrieve tasks][5]
 - [Create a task][6]

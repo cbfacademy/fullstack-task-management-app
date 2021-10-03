@@ -45,7 +45,7 @@ router.delete('/tasks/:id', async (req,res) => {
   const command = new SimpleDeleteTaskCommand(tasksRepository);
   const controller = new DeleteTaskController(command);
 
-  controller.delete(req);
+  controller.delete(Number(req.params.id));
   return res.sendStatus(204);
 });
 
