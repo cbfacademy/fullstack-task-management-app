@@ -14,5 +14,5 @@ describe("The update task controller should", () => {
     controller.update(updateTaskRequest);
 
     expect(command.wasCalled()).toEqual(1);
-  })
+  });
 })

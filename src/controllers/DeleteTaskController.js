@@ -1,11 +1,13 @@
 import { DeleteTaskCommand } from "../commands/DeleteTaskCommand";
 
 export class DeleteTaskController {
+  command: DeleteTaskCommand;
+
   constructor(command: DeleteTaskCommand) {
-    throw new Error("Not implemented");
+    this.command = command;
   }
 
-  delete(request: Request): void {
-    throw new Error("Not implemented");
+  delete(id: number): void {
+    this.command.execute(id);
   }
 }

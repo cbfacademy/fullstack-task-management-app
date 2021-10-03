@@ -17,8 +17,13 @@ export class TasksRepositoryFake implements TasksRepository {
 
   save(task: Task): void {
     this.numberOfCalls++;
-    if (task.id || task.id === 0) this.tasks = this.tasks.filter(task => task.id === task.id)
+    if (task.id) this.tasks = this.tasks.filter(t => t.id !== task.id);
     this.tasks.push(task);
+  }
+
+  delete(id): void {
+    this.numberOfCalls++;
+    this.tasks = this.tasks.filter(task => task.id !== id);
   }
 
   wasCalled(): number {

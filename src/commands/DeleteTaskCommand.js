@@ -5,11 +5,13 @@ export interface DeleteTaskCommand {
 }
 
 export class SimpleDeleteTaskCommand implements  DeleteTaskCommand {
+  repository: TasksRepository;
+
   constructor(repository: TasksRepository) {
-    throw new Error("Not implemented");
+    this.repository = repository;
   }
 
   execute(id): void {
-    throw new Error("Not implemented");
+    this.repository.delete(id)
   }
 }

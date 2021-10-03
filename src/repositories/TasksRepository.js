@@ -4,6 +4,7 @@ export interface TasksRepository {
   getAll(): Task[];
   getBy(id: number): Task;
   save(task: Task): void;
+  delete(id: number): void;
 }
 
 export class InMemoryTasksRepository implements TasksRepository {
@@ -32,6 +33,10 @@ export class InMemoryTasksRepository implements TasksRepository {
       this.tasks.delete(task.id);
     }
     this.tasks.set(task.id, task);
+  }
+
+  delete(id): void {
+    this.tasks.delete(id);
   }
 
   count(): number {
