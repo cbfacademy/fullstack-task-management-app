@@ -1,5 +1,5 @@
 import { TasksController } from "../../../src/controllers/TasksController";
-import { getAllTasks } from "../../fixture/tasksFixture";
+import { getAllTestTasks } from "../../fixture/tasksFixture";
 import { GetTasksQueryStub } from "../../fixture/GetTasksQueryStub";
 
 describe("The tasks controller should", () => {
@@ -7,7 +7,7 @@ describe("The tasks controller should", () => {
   const controller = new TasksController(query);
 
   it("retrieve all tasks", () => {
-    const expectedTasks = getAllTasks();
+    const expectedTasks = getAllTestTasks();
 
     const actualTasks = controller.allTasks();
 

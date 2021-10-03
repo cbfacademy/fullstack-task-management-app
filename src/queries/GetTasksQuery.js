@@ -6,11 +6,13 @@ export interface GetTasksQuery {
 }
 
 export class SimpleGetTasksQuery implements GetTasksQuery {
+  repository: TasksRepository;
+
   constructor(repository: TasksRepository) {
-    throw new Error("Not implemented");
+    this.repository = repository;
   }
 
   getTasks(): Task[] {
-    throw new Error("Not implemented");
+    return this.repository.getAll();
   }
 }
