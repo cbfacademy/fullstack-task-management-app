@@ -1,4 +1,4 @@
-import { Task } from "../../src/domain/Task";
+import { Task } from "../../src/domain/task";
 
 export const getAllTestTasks = () : Task[] => {
   return [
