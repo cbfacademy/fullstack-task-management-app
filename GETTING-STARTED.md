@@ -25,13 +25,6 @@ Generally speaking, each functionality will be implemented via four types of com
 4. [Complete a task][5]
 5. [Delete a task][6]
 
-## Project Structure
-
-We've provided a basic scaffolding for the project to allow you to focus on the core functionality. We've separated "production" code from the tests as follows... However, feel free to restructure the codebase as you see fit.
-
-
-![Project structure][8]
-
 ### Starting the server
 
 We're using Node.js and [express][7] as a web framework to expose our API. Before starting your implementation, check that the provided setup works. 
@@ -39,6 +32,7 @@ We're using Node.js and [express][7] as a web framework to expose our API. Befor
 First install all the dependencies in the project by running:
 
 ```bash
+cd server
 yarn install
 ```
 
@@ -88,7 +82,6 @@ You can use a client like [Postman][10] to interact with the API, and:
 [5]: requirements/4-complete-task.md
 [6]: requirements/5-delete-task.md
 [7]: https://expressjs.com/
-[8]: /resources/structure.png
 [9]: https://www.postman.com/downloads/
 [10]: https://learning.postman.com/docs/getting-started/introduction/
 
