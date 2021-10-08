@@ -9,9 +9,9 @@ function App() {
       <div>
         <TaskForm />
       </div>
-      {/*<div>*/}
-      {/*  <TasksTable />*/}
-      {/*</div>*/}
+      <div>
+        <TasksTable />
+      </div>
     </div>
   );
 }
