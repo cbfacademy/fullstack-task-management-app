@@ -82,14 +82,20 @@ You can use a client like [Postman][10] to interact with the API, and:
 
 We've created a simple react frontend composed of a form and a table to display tasks.
 
-First install all the dependencies in the client project by running:
+In the `client/` folder, create a `.env` file in which to store the address of the server running locally as follows:
+
+```ENV
+REACT_APP_SERVER_URL=http://localhost:4000
+```
+
+Then, install all the dependencies in the client project by running:
 
 ```bash
-cd client
+cd ./client
 yarn install
 ```
 
-Then, to start the client, run the following command:
+Finally, to start the client, run the following command:
 
 ```bash
 yarn start
