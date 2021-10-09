@@ -54,10 +54,9 @@ $ nodemon ./src/index.js
 task management app started on port 4000
 ```
 
-A `GET` request to `localhost:4000/` (via [Postman][9] for example) should return:
+A `GET` request to `localhost:4000/` (via [Postman][9] for example) should return a `200 OK` response with:
 
 ```JSON
-200 OK
 {
   "name": "task management application"
 }

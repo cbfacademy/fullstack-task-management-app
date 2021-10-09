@@ -45,7 +45,7 @@ class TasksTable extends Component {
           <th scope="col">Completed</th>
         </tr>
         </thead>
-        <tbody> { items } </tbody>
+        <tbody>{ items }</tbody>
       </table>
     )
   }

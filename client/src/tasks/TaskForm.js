@@ -16,7 +16,9 @@ class TaskForm extends Component {
   }
 
   handleCheck = (event) => {
-    this.state.completed = event.target.checked;
+    const value = event.target.checked;
+
+    this.setState( { completed: value});
   }
 
   handleClick = () => {
