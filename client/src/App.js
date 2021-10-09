@@ -5,7 +5,7 @@ import TasksTable from "./tasks/TasksTable";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <div>
         <TaskForm />
       </div>

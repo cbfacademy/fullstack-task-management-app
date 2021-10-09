@@ -15,12 +15,16 @@ describe('The tasks table', () => {
     expect(component.find('table').length).toEqual(1);
   })
 
+  it('Should render a caption element', () => {
+    expect(component.find('caption').length).toEqual(1);
+  })
+
   it('Should render a header element with four columns', () => {
     expect(component.find('th').length).toEqual(4);
   })
 
   it('Should render titles in the columns', () => {
-    expect(component.find('th').at(0).text()).toEqual('ID');
+    expect(component.find('th').at(0).text()).toEqual('#');
     expect(component.find('th').at(1).text()).toEqual('Title');
     expect(component.find('th').at(2).text()).toEqual('Description');
     expect(component.find('th').at(3).text()).toEqual('Completed');

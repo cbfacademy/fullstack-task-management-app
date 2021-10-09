@@ -8,7 +8,7 @@ class TasksTable extends Component {
   }
 
   componentDidMount = () => {
-    const apiURL = 'http://localhost:4000/tasks';
+    const apiURL = `${process.env.REACT_APP_SERVER_URL}/tasks`;
     return axios.get(apiURL)
       .then(response => {
         this.setState({ tasks: response.data })
@@ -27,19 +27,22 @@ class TasksTable extends Component {
               id="completed"
               type="checkbox"
               name="completed"
+              className="text-center"
+              disabled={true}
               defaultChecked={ task.completed }
             />
           </td>
         </tr>
       )})
     return (
-      <table>
-        <thead>
+      <table className="table table-hover caption-top">
+        <caption>Tasks</caption>
+        <thead className="table-light">
         <tr>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Completed</th>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Completed</th>
         </tr>
         </thead>
         <tbody> { items } </tbody>

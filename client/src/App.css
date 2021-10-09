@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  text-align: justify-all;
+  margin: 5em 20em 40em 10em;
 }
 
 .App-logo {
@@ -35,4 +36,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.border {
+  padding: 2em;
+}
+
+.table {
+  margin-top: 2em;
 }
