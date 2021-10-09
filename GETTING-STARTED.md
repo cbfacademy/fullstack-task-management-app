@@ -25,6 +25,11 @@ Generally speaking, each functionality will be implemented via four types of com
 4. [Complete a task][5]
 5. [Delete a task][6]
 
+
+## Run the application locally
+
+The application is composed of a simple server (for the web API) and a basic react client.
+
 ### Starting the server
 
 We're using Node.js and [express][7] as a web framework to expose our API. Before starting your implementation, check that the provided setup works. 
@@ -39,7 +44,7 @@ yarn install
 Then, to start the server, run the following command:
 
 ```bash
-yarn dev
+yarn serve
 ```
 
 You should be able to see a similar output to this:
@@ -62,7 +67,7 @@ A `GET` request to `localhost:4000/` (via [Postman][9] for example) should retur
 }
 ```
 
-### Access the `/tasks` API
+#### Access the `/tasks` API
 
 Once the server is started locally, you should be able to access the `/tasks` web API on `http://localhost:4000/tasks`.
 
@@ -73,6 +78,26 @@ You can use a client like [Postman][10] to interact with the API, and:
 - complete a task via a `PUT /tasks/{id}` request
 - delete a task via a `DELETE /tasks/{id}` request
 
+### Starting the client
+
+We've created a simple react frontend composed of a form and a table to display tasks.
+
+First install all the dependencies in the client project by running:
+
+```bash
+cd client
+yarn install
+```
+
+Then, to start the client, run the following command:
+
+```bash
+yarn start
+```
+
+The client application should start on `http://localhost:3000`, and display the following:
+
+![Task management app][11]
 
 [1]: https://martinfowler.com/bliki/CQRS.html
 [2]: requirements/1-retrieve-tasks.md
@@ -83,4 +108,5 @@ You can use a client like [Postman][10] to interact with the API, and:
 [7]: https://expressjs.com/
 [9]: https://www.postman.com/downloads/
 [10]: https://learning.postman.com/docs/getting-started/introduction/
+[11]: resources/task-management-app.png
 

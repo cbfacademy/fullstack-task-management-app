@@ -35,7 +35,7 @@ class TasksTable extends Component {
         </tr>
       )})
     return (
-      <table className="table table-hover caption-top">
+      <table className="table table-bordered table-hover caption-top">
         <caption>Tasks</caption>
         <thead className="table-light">
         <tr>
