@@ -8,7 +8,8 @@ describe("The create task controller should", () => {
   it("process a request to add a new task", () => {
     const createTaskRequest = {
       title: "New task title",
-      description: "New task description"
+      description: "New task description",
+      completed: true
     };
 
     controller.create(createTaskRequest);

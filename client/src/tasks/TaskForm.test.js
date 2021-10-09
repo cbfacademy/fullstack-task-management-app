@@ -81,7 +81,7 @@ describe('The task form', () => {
     checkbox.simulate('click', {
       target: {
         name: 'completed',
-        value: true
+        checked: true
       }
     });
 
@@ -110,7 +110,7 @@ describe('The task form', () => {
     completed.simulate('click', {
       target: {
         name: 'completed',
-        value: true
+        checked: true
       }
     });
 

@@ -4,9 +4,9 @@ export class Task {
   description: string;
   completed: false;
 
-  constructor(title: string, description: string) {
+  constructor(title: string, description: string, completed: boolean) {
     this.title = title;
     this.description = description;
-    this.completed = false;
+    this.completed = completed;
   }
 }

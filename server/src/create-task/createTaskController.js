@@ -9,6 +9,6 @@ export class CreateTaskController {
   }
 
   create(request: CreateTaskRequest): void {
-    this.command.execute(request.title, request.description);
+    this.command.execute(request.title, request.description, request.completed);
   }
 }
